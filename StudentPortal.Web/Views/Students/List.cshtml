@@ -1,0 +1,104 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model List<StudentPortal.Web.Models.Entities.Student>
+
+@{
+    ViewData["Title"] = "Students List";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="card shadow-lg border-light">
+                <div class="card-header text-center bg-primary text-white">
+                    <h3>Students List</h3>
+                </div>
+                <div class="card-body">
+                    <!-- Table to display students -->
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var student in Model)
+                            {
+                                <tr>
+                                    <td>@student.Id</td>
+                                    <td>@student.Name</td>
+                                    <td>@student.Email</td>
+                                    <td>@student.Phone</td>
+                                    <td class="text-center">
+                                        <a class="btn btn-warning text-white"
+                                           asp-controller="Students"
+                                           asp-action="Edit"
+                                           asp-route-id="@student.Id">
+                                            Edit
+                                        </a>
+                                        
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-footer text-center">
+                    <a class="btn btn-success" asp-controller="Students" asp-action="Add">Add New Student</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Optional: Add Custom Styles for Hover and Effects -->
+<style>
+    .table-hover tbody tr:hover {
+        background-color: #f1f1f1;
+        cursor: pointer;
+    }
+
+    .btn-warning:hover {
+        background-color: #ffcc00;
+        color: #fff;
+    }
+
+    .btn-danger:hover {
+        background-color: #dc3545;
+        color: #fff;
+    }
+
+    .btn-success:hover {
+        background-color: #28a745;
+        color: #fff;
+    }
+
+    /* Add some custom styling for cards and buttons */
+    .card {
+        border-radius: 10px;
+    }
+
+    .card-header {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .card-footer {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+</style>
+
+<!-- Include jQuery and Bootstrap JS for interactive components -->
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+}
+

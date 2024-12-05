@@ -1,0 +1,66 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<head>
+    <link href="~/css/site.css" rel="stylesheet" />
+</head>
+<div class="container my-5">
+    <div class="text-center">
+        <!-- Welcome Section -->
+        <h1 class="display-4 fw-bold text-primary mb-4">Welcome to Student Portal</h1>
+        <p class="lead">
+            This web application allows you to manage students effectively by performing CRUD operations.
+        </p>
+        <p>
+            Learn more about <a href="https://learn.microsoft.com/aspnet/core" target="_blank" class="text-decoration-none fw-bold text-success">building Web apps with ASP.NET Core</a>.
+        </p>
+    </div>
+
+    <!-- Features Section -->
+    <div class="row text-center mt-5">
+        <div class="col-md-3">
+            <div class="card border-primary shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title text-primary">Add Student</h5>
+                    <p class="card-text">Create a new student record in the database with essential details.</p>
+                    <a href="/Students/Add" class="btn btn-primary">Add Student</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card border-success shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title text-success">List Students</h5>
+                    <p class="card-text">View all students with options to edit or delete their information.</p>
+                    <a href="/Students/List" class="btn btn-success">View Students</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card border-warning shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title text-warning">Edit Student</h5>
+                    <p class="card-text">Modify student details like name, email, or phone number.</p>
+                    <a href="/Students/List" class="btn btn-warning text-white">Edit Student</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card border-danger shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title text-danger">Delete Student</h5>
+                    <p class="card-text">Remove unwanted student records from the system.</p>
+                    <a href="/Students/List" class="btn btn-danger">Delete Student</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="text-center mt-5 text-muted">
+        <p>&copy; 2024 StudentPortal.Web - Built with ASP.NET Core MVC</p>
+    </footer>
+</div>
